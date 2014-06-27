@@ -17,6 +17,16 @@ class Category extends Eloquent{
 
     protected $fillable = array();
 
+    public function catQualities(){
+
+        return $this->hasMany('CatQuality');
+    }
+
+    public function evaluationValues(){
+
+        return $this->hasMany('EvaluationValue');
+    }
+
 
 
 

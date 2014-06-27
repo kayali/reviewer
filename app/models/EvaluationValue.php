@@ -17,5 +17,16 @@ class EvaluationValue extends Eloquent{
 
     protected $fillable = array();
 
+    public function evaluation(){
+        return $this->belongsTo('Evaluation');
+    }
+
+    public function category(){
+        return $this->belongsTo('Category');
+    }
+
+
+
+
 
 } 

@@ -17,5 +17,11 @@ class CatQuality extends Eloquent{
 
     protected $fillable = array();
 
+    public function category(){
+
+       return $this->belongsTo('Category');
+
+    }
+
 
 }

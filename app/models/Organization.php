@@ -17,4 +17,10 @@ class Organization extends ELoquent{
 
     protected $fillable = array();
 
+
+    public function evaluations()
+    {
+        return $this->hasMany("Evaluation");
+    }
+
 } 
