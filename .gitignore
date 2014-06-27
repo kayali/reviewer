@@ -1,3 +1,6 @@
+/.idea
+/app/config/database.php
+/app/config/local
 .env.*.php
 .env.php
 .DS_Store
