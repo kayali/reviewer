@@ -14,8 +14,9 @@ class CatQuality extends Eloquent{
      * @var string
      */
     protected $table = 'cat_qualities';
-
-    protected $fillable = array();
+    protected $guarded = [''];
+    public $timestamps = false;
+    //protected $fillable = array();
 
     public function category(){
 

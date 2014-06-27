@@ -14,8 +14,9 @@ class Organization extends ELoquent{
      * @var string
      */
     protected $table = 'organizations';
+    protected $guarded = [''];
 
-    protected $fillable = array();
+    //protected $fillable = array();
 
 
     public function evaluations()
