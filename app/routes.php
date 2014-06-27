@@ -22,3 +22,4 @@ Route::get('/', function()
 Route::get('review/{organization_id}', 'ReviewController@reviewForm');
 
 Route::post('review2', 'ReviewController@review');
+Route::get('reviews/top','ReviewController@topReviews');
