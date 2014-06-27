@@ -19,4 +19,6 @@ Route::get('/', function()
 });
 
 
-Route::get('review', 'ReviewController@reviewForm');
+Route::get('review/{organization_id}', 'ReviewController@reviewForm');
+
+Route::post('review2', 'ReviewController@review');

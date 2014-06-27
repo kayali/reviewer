@@ -15,7 +15,11 @@ class EvaluationValue extends Eloquent{
      */
     protected $table = 'evaluation_values';
 
-    protected $fillable = array();
+    public $timestamps = false;
+
+//    protected $fillable = array();
+
+    protected $guarded = [];
 
     public function evaluation(){
         return $this->belongsTo('Evaluation');

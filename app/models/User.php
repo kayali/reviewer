@@ -18,7 +18,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 
 
-    protected $fillable = array('*');
+   // protected $fillable = array('*');
 
 
     /**
@@ -28,18 +28,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password', 'remember_token');
 
+	 protected $guarded = [];
+
+
+
     public function evaluations()
     {
         return $this->hasMany("Evaluation");
     }
-
-
-
-
-
-
-
-
 
 
 

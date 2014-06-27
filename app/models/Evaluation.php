@@ -16,7 +16,9 @@ class Evaluation extends Eloquent{
      */
     protected $table = 'evaluations';
 
-    protected $fillable = array();
+    //protected $fillable = array();
+    protected $guarded = [];
+
 
     public function user()
     {

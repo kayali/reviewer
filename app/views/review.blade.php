@@ -24,27 +24,32 @@
 
 <div class="container" >
 
-	<form class="review-form" >
+	{{ Form::open(array('url' => 'review2', 'method' => 'post', 'class' =>'review-form')) }}
+
+	<input type="hidden" class="" name="organization_id" value="{{$organization_id}}" /> 
 	<div class="row" >
 
 		<div class="col-md-6" >
-
+			<?php // print_r( $items ); die(); ?>
 			@foreach ( $items as $key => $item )
 			<div class="row" >
 
-				<div class="col-md-3" >
-					<label>{{ $item['name'] }}</label>
-					<input type="hidden" class="answer{{$key}}" name="answers[{{$key}}]" value="" />
+				<div class="col-md-7" >
+					{{Form::label('', $item['name'] ); }}
+					<input type="hidden" class="" name="categories[{{$key}}][category_id]" value="{{$item['id']}}" />
+					<input type="hidden" class="answer{{$key}}" name="categories[{{$key}}][value]" value="" />
 				</div>
-				<div class="col-md-9" >
+				<div class="col-md-5" >
 					<div class="slider" ></div>
 				</div>
 			</div>
 			@endforeach	
 		</div>
 	</div>
+	<input type="submit" />
+	{{ Form::close() }}
 
-	</form>
+
 
 
 	<div class="media">
@@ -89,9 +94,9 @@ $(".slider").each(function(index, value){
 		max: 5 , 
 		min : 1 , 
 		value: 2, 
- 		slide: function( event, ui ) {
-        	$(".answer"+index).val( ui.value);
-      	}
+		slide: function( event, ui ) {
+			$(".answer"+index).val( ui.value);
+		}
 	});	
 	// and then we can apply pips to it!
 	$slider.slider("float",{ formatLabel: function(value) {
@@ -100,18 +105,16 @@ $(".slider").each(function(index, value){
 });
 
 $(document).on( 'submit', ".review-form", function( event ){
-
-	event.preventDefault();
-	var data = $(".review-form").serializeArray();	
-
-	console.log( data );
-
-	// $.post('/path/to/file', data , function(data, textStatus, xhr) {
-		
-	// });
-
-});
 	
+	event.preventDefault();	
+	
+	var form = $(this);
+	var data = form.serializeArray();	
+	
+	$.post(form.attr('action'), data , function(data, textStatus, xhr) {
+		console.log( data );
+	});
+});
 
 
 </script>
