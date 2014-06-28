@@ -1,0 +1,38 @@
+<Template TempID="٢" Language="Ar" Lastupdate="27/6/2014" UpdatedBy="Hacker">
+	<PhraseConnecter>
+	<LoopConnecter>إضافةً لذلك،</LoopConnecter>
+	<LoopConnecter>، وكذلك</LoopConnecter>
+	</PhraseConnecter>
+	<MoodConnecter>
+	<ConnecterValue>في المقابل،</ConnecterValue>
+	<ConnecterValue>ولكن</ConnecterValue>
+	<ConnecterValue>مع ذلك</ConnecterValue>
+	</MoodConnecter>
+	<StatmentMood MinAvg="0" MaxAvg="2.4">
+		<Phrase Type="loop">
+			<PhraseText type="constant" second="0" value="انزجت لأن"/>
+			<PhraseText type="variable" value="name"/>
+			<PhraseText type="variable" value="quality"/>
+			<loopSeparator>، و</loopSeparator>
+			<loopEnd>و</loopEnd>
+		</Phrase>
+	</StatmentMood>
+	<StatmentMood MinAvg="2.5" MaxAvg="2.9">
+		<Phrase Type="loop">
+			<PhraseText type="constant" second="0" value=""/>
+			<PhraseText type="variable" value="quality"/>
+			<PhraseText type="variable" value="name"/>
+			<loopSeparator>، و</loopSeparator>
+			<loopEnd>و</loopEnd>
+		</Phrase>
+	</StatmentMood>
+	<StatmentMood MinAvg="3" MaxAvg="5">
+		<Phrase Type="loop">
+			<PhraseText type="constant" second="0" value="افلقد جدت"/>
+			<PhraseText type="variable" value="name"/>
+			<PhraseText type="variable" value="quality"/>
+			<loopSeparator>، و</loopSeparator>
+			<loopEnd>و</loopEnd>
+		</Phrase>
+	</StatmentMood>
+</Template>
