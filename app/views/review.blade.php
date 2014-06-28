@@ -162,7 +162,7 @@ function submitReviewForm(){
 
 	var form = $(".review-form");
 	var data = form.serializeArray();	
-	$.post( "/preview" , data , function(resp, textStatus, xhr) {
+	$.post( "<?php echo URL::route('preview');?>", data , function(resp, textStatus, xhr) {
 		
 		$(".review-text").html( resp.evaluation );
 
@@ -171,7 +171,7 @@ function submitReviewForm(){
 
 
 function loadTopRevies(){
-    $.get( "/topReviews/" + organization_id, function( resp ){
+    $.get( "<?php echo URL::route('top',array('organization_id'=>1));?>", function( resp ){
 		$(".reviews-list").html( resp );
 
 

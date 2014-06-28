@@ -86,8 +86,5 @@ Route::get('topReviews/{organization_id}', 'ReviewController@topReviews');
 
 Route::post('review2', 'ReviewController@review');
 
-Route::post('preview', 'ReviewController@evaluateForPreview');
-
-
-
-Route::get('reviews/top','ReviewController@topReviews');
+Route::post('preview', array('as'=>'preview', 'uses'=>'ReviewController@evaluateForPreview'));
+Route::get('reviews/top/{organization_id}', array('as'=>'top', 'uses'=>'ReviewController@topReviews'));
