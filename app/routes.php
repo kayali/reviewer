@@ -77,3 +77,9 @@ Route::get('/', function()
 	);
 	$verbalized_text = new Verbalizer(1,"ar", $dummy_review);
 });
+
+
+Route::get('review/{organization_id}', 'ReviewController@reviewForm');
+
+Route::post('review2', 'ReviewController@review');
+Route::get('reviews/top','ReviewController@topReviews');
